@@ -16,6 +16,7 @@ steps:
     tags:
       - latest
       - ${DRONE_BUILD_FINISHED}
+      
 - name: stream-runtime
   image: plugins/docker
   failure: ignore
@@ -30,6 +31,7 @@ steps:
     tags:
       - latest
       - ${DRONE_BUILD_FINISHED}
+      
 - name: chrome-packer
   image: plugins/docker
   failure: ignore
