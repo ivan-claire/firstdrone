@@ -11,7 +11,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: ivan-claire/firstdrone
+    repo: awony/firstdrone
     dockerfile: Dockerfile
     tags:
       - latest
@@ -25,7 +25,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: ivan-claire/firstdrone
+    repo: awony/firstdrone
     dockerfile: Dockerfile
     tags:
       - latest
@@ -39,7 +39,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: ivan-claire/firstdrone
+    repo: awony/firstdrone
     dockerfile: Dockerfile
     tags:
       - latest
