@@ -1,0 +1,46 @@
+kind: pipeline
+name: default
+
+steps:
+- name: stream-build
+  image: plugins/docker
+  failure: ignore
+  depends_on: [ clone ]
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: ivan-claire/firstdrone
+    dockerfile: Dockerfile
+    tags:
+      - latest
+      - ${DRONE_BUILD_FINISHED}
+- name: stream-runtime
+  image: plugins/docker
+  failure: ignore
+  depends_on: [ clone ]
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: ivan-claire/firstdrone
+    dockerfile: Dockerfile
+    tags:
+      - latest
+      - ${DRONE_BUILD_FINISHED}
+- name: chrome-packer
+  image: plugins/docker
+  failure: ignore
+  depends_on: [ clone ]
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: ivan-claire/firstdrone
+    dockerfile: Dockerfile
+    tags:
+      - latest
+      - ${DRONE_BUILD_FINISHED}
